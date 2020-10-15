@@ -45,6 +45,38 @@ function verNivel (user, msg) {
     var xp = usuarios[user.id].xp;
 }
 
+//PEDIR NIVEL
+client.on("message", async message => {
+    if(message.author.bot) return;
+
+    if(usuarioRegistrado(message.author)) verNivel(message.author, message);
+    else registrarUsuario(message.author);
+
+    if(message.content == `${prefix}nivel`){
+        var user = message.author;
+        var nivel = usuarios[user.id].nivel;
+        var xp = usuarios[user.id].xp;
+        var sigNivel = nivel * 100;
+
+        //|||||||||||||||EMBED
+        const embed = new Discord.MessageEmbed()
+	    .setColor('#025DFD')
+	    .setTitle('NIVELES | MISION TIC 2022')
+	    .setAuthor(client.user.username, 'https://cdn.discordapp.com/attachments/755973908456538146/766351301646352444/misiontic.png')
+        .addFields(
+            {name: `** Aca podras consultar tu nivel. **`, value: `${user} | TU NIVEL ES:` },
+            {name: 'Nivel: ', value: `${nivel}` },
+            {name: 'XP: ', value: `${xp}/${sigNivel}`}
+        )
+	    .setThumbnail('https://cdn.discordapp.com/attachments/755973908456538146/766351219886522388/articles-150235_logo.png')
+	    .setTimestamp()
+        .setFooter('©MinTic | 2020 | Esteban - Juanjo', 'https://cdn.discordapp.com/attachments/755973908456538146/766351301646352444/misiontic.png')
+        //|||||||||||||||EMBED
+
+        message.channel.send(embed);
+    }
+});
+
 
 
 //token
