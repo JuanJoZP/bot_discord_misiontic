@@ -41,7 +41,8 @@ function registrarUsuario (user) {
 
 //PEDIR NIVEL Y XP
 function verNivel (user, msg) {
-    var nivel = usuarios[user.id].nivel
+    var nivel = usuarios[user.id].nivel;
+    var xp = usuarios[user.id].xp;
 }
 
 
