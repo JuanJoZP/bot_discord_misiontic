@@ -48,17 +48,22 @@ function verNivel (user, msg) {
     var agregarXp = 10;
     if (xp>= sigNivel) {
         usuarios[user.id].xp = 0;
-        usuarios[user.id].nivel = nivel++;
+        usuarios[user.id].nivel = nivel + 1;
         //Embed inicio
         const embed = new Discord.MessageEmbed()
         .setColor('#2336A2')
         .setTitle('NIVELES | MISION TIC 2022')
-        .setAuthor(client.user.username.author)
-        .setDescription(`El usuario ${<@user.id>} ha ascendido al nivel ${nivel++}`)
-        .setThumbnail()
+        .setAuthor(client.user.username, 'https://cdn.discordapp.com/attachments/755973908456538146/766365052541468672/misiontic.png')
+        .setDescription(`El usuario <@${user.id}>  ha ascendido al nivel ${nivel + 1}`)
+        .setThumbnail("https://cdn.discordapp.com/attachments/755973908456538146/766351219886522388/articles-150235_logo.png")
+        .setTimestamp()
+        .setFooter('©MinTic | 2020 | Esteban - Juanjo', 'https://cdn.discordapp.com/attachments/755973908456538146/766365052541468672/misiontic.png')
 
         //Embed final
+        client.channels.cache.get(channel_levels_id).send(embed);
 
+    } else  {
+        usuarios[user.id].xp = xp + agregarXp;
     }
     
 }
@@ -78,9 +83,9 @@ client.on("message", async message => {
 
         //|||||||||||||||EMBED
         const embed = new Discord.MessageEmbed()
-	    .setColor('#025DFD')
+	    .setColor('#EB5B77')
 	    .setTitle('NIVELES | MISION TIC 2022')
-	    .setAuthor(client.user.username, 'https://cdn.discordapp.com/attachments/755973908456538146/766351301646352444/misiontic.png')
+	    .setAuthor(client.user.username, 'https://cdn.discordapp.com/attachments/755973908456538146/766365052541468672/misiontic.png')
         .addFields(
             {name: `** Aca podras consultar tu nivel. **`, value: `${user} | TU NIVEL ES:` },
             {name: 'Nivel: ', value: `${nivel}` },
@@ -88,7 +93,7 @@ client.on("message", async message => {
         )
 	    .setThumbnail('https://cdn.discordapp.com/attachments/755973908456538146/766351219886522388/articles-150235_logo.png')
 	    .setTimestamp()
-        .setFooter('©MinTic | 2020 | Esteban - Juanjo', 'https://cdn.discordapp.com/attachments/755973908456538146/766351301646352444/misiontic.png')
+        .setFooter('©MinTic | 2020 | Esteban - Juanjo', 'https://cdn.discordapp.com/attachments/755973908456538146/766365052541468672/misiontic.png')
         //|||||||||||||||EMBED
 
         message.channel.send(embed);
