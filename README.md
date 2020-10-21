@@ -1,0 +1,12 @@
+# bot_discord_misiontic
+
+Este es un bot de discord para el server de el programa educativo misiontic2022
+el bot maneja funcionalidades simples en el server:
+-Sistemas de niveles
+-Sistema de advertencias y baneos (en implementacion)
+
+
+Documentacion para uso:
+
+!!nivel en cualquier canal, el bot respondera con un mensaje en el que se muestra el nivel actual del usuario, su xp y la xp para llegara al siguiente nivel.
+
