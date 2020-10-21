@@ -1,6 +1,6 @@
-# bot_discord_misiontic
+# bot de discord: MisionTic
 
-Este es un bot de discord para el server de el programa educativo misiontic2022
+Este es un bot de discord para el server de el programa educativo Mision TIC 2022
 el bot maneja funcionalidades simples en el server:
 
 * Sistemas de niveles
