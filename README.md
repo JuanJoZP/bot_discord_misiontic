@@ -6,7 +6,8 @@ el bot maneja funcionalidades simples en el server:
 -Sistema de advertencias y baneos (en implementacion)
 
 
+
 Documentacion para uso:
 
-!!nivel en cualquier canal, el bot respondera con un mensaje en el que se muestra el nivel actual del usuario, su xp y la xp para llegara al siguiente nivel.
+*!!nivel en cualquier canal, el bot respondera con un mensaje en el que se muestra el nivel actual del usuario, su xp y la xp para llegara al siguiente nivel.
 
