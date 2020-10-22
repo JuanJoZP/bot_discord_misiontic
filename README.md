@@ -10,5 +10,6 @@ el bot maneja funcionalidades simples en el server:
 
 ### Documentacion para uso:
 
-* !!nivel en cualquier canal, el bot respondera con un mensaje en el que se muestra el nivel actual del usuario, su xp y la xp para llegar al siguiente nivel.
+* !!nivel - en cualquier canal, el bot respondera con un mensaje en el que se muestra el nivel actual del usuario, su xp y la xp para llegar al siguiente nivel.
+* !!warn @usuario razon de warneo - pone advertencia e el usuario mencionado, envia mensaje informando de la advertencia, cuando un usuario llega a las 3 advertencias este es baneado
 
