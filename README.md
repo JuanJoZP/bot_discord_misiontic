@@ -22,7 +22,7 @@ el bot maneja funcionalidades simples en el server:
 ```node .\bot.js```
 
 Si en consola puede ver un mensaje que dice: Sesión iniciada como... 
-###### el bot ya esta listo y funcionando 
+##### el bot ya esta listo y funcionando 
 
 ### Documentacion para uso:
 
