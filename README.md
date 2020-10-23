@@ -21,7 +21,7 @@ el bot maneja funcionalidades simples en el server:
 -ejecutar el archivo bot.js con el comando:
 ```node .\bot.js```
 
-Si en consola puede ver un mensaje que dice: Sesión iniciada como...  ##### significa que el bot ya esta listo y funcionando 
+Si en consola puede ver un mensaje que dice: Sesión iniciada como...  ** significa que el bot ya esta listo y funcionando **
 
 ### Documentacion para uso:
 
