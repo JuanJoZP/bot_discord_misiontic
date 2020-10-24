@@ -1,15 +1,7 @@
+const fs = require("fs")
+const usuarios = require("./users_levels.json");
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const config = require("./config.json");
-const fs = require("fs")
-const prefix = config.prefix;
-const usuarios = require("./users_levels.json");
-const channel_levels_id = "766345989602410557";
-
-//Consola
-client.once("ready", async msg =>{
-    console.log('Niveles iniciado')
-});
 
  //REGISTRAR USUARIOS
 function usuarioRegistrado (user) {
@@ -39,9 +31,8 @@ function registrarUsuario (user) {
     }
 }
 
-
 //PEDIR NIVEL Y XP
-function verNivel (user, msg) {
+function verNivel (user) {
     var nivel = usuarios[user.id].nivel;
     var xp = usuarios[user.id].xp;
     var sigNivel = nivel * 100;
@@ -49,58 +40,54 @@ function verNivel (user, msg) {
     if (xp>= sigNivel) {
         usuarios[user.id].xp = 0;
         usuarios[user.id].nivel = nivel + 1;
+        fs.writeFile("./users_levels.json", JSON.stringify(usuarios), (err) => {
+            if(err) console.log(err);
+        });
         //Embed inicio
-        const embed = new Discord.MessageEmbed()
+        this.embed = new Discord.MessageEmbed()
         .setColor('#2336A2')
         .setTitle('NIVELES | MISION TIC 2022')
-        .setAuthor(client.user.username, 'https://cdn.discordapp.com/attachments/755973908456538146/766365052541468672/misiontic.png')
+        .setAuthor('MinTic 2022', 'https://cdn.discordapp.com/attachments/755973908456538146/766365052541468672/misiontic.png')
         .setDescription(`El usuario <@${user.id}>  ha ascendido al nivel ${nivel + 1}`)
         .setThumbnail("https://cdn.discordapp.com/attachments/755973908456538146/766351219886522388/articles-150235_logo.png")
         .setTimestamp()
         .setFooter('©MinTic | 2020 | Esteban - Juanjo', 'https://cdn.discordapp.com/attachments/755973908456538146/766365052541468672/misiontic.png')
+        
 
-        //Embed final
-        client.channels.cache.get(channel_levels_id).send(embed);
 
     } else  {
         usuarios[user.id].xp = xp + agregarXp;
+        this.embed = new Discord.MessageEmbed()
+        fs.writeFile("./users_levels.json", JSON.stringify(usuarios), (err) => {
+            if(err) console.log(err);
+        });
     }
     
 }
 
-//PEDIR NIVEL
-client.on("message", async message => {
-    if(message.author.bot) return;
+function consultarXp(message) {
+    this.user = message.author;
+    this.nivel = usuarios[this.user.id].nivel;
+    this.xp = usuarios[this.user.id].xp;
+    this.sigNivel = this.nivel * 100;
 
-    if(usuarioRegistrado(message.author)) verNivel(message.author, message);
-    else registrarUsuario(message.author);
+    this.embed = new Discord.MessageEmbed()
+    .setColor('#EB5B77')
+    .setTitle('NIVELES | MISION TIC 2022')
+    .setAuthor('MinTic 2022', 'https://cdn.discordapp.com/attachments/755973908456538146/766365052541468672/misiontic.png')
+    .addFields(
+        {name: `** Aca podras consultar tu nivel. **`, value: `${this.user} | TU NIVEL ES:` },
+        {name: 'Nivel: ', value: `${this.nivel}` },
+        {name: 'XP: ', value: `${this.xp}/${this.sigNivel}`}
+    )
+    .setThumbnail('https://cdn.discordapp.com/attachments/755973908456538146/766351219886522388/articles-150235_logo.png')
+    .setTimestamp()
+    .setFooter('©MinTic | 2020 | Esteban - Juanjo', 'https://cdn.discordapp.com/attachments/755973908456538146/766365052541468672/misiontic.png')
+    //|||||||||||||||EMBED
 
-    if(message.content == `${prefix}nivel`){
-        var user = message.author;
-        var nivel = usuarios[user.id].nivel;
-        var xp = usuarios[user.id].xp;
-        var sigNivel = nivel * 100;
+}
 
-        //|||||||||||||||EMBED
-        const embed = new Discord.MessageEmbed()
-	    .setColor('#EB5B77')
-	    .setTitle('NIVELES | MISION TIC 2022')
-	    .setAuthor(client.user.username, 'https://cdn.discordapp.com/attachments/755973908456538146/766365052541468672/misiontic.png')
-        .addFields(
-            {name: `** Aca podras consultar tu nivel. **`, value: `${user} | TU NIVEL ES:` },
-            {name: 'Nivel: ', value: `${nivel}` },
-            {name: 'XP: ', value: `${xp}/${sigNivel}`}
-        )
-	    .setThumbnail('https://cdn.discordapp.com/attachments/755973908456538146/766351219886522388/articles-150235_logo.png')
-	    .setTimestamp()
-        .setFooter('©MinTic | 2020 | Esteban - Juanjo', 'https://cdn.discordapp.com/attachments/755973908456538146/766365052541468672/misiontic.png')
-        //|||||||||||||||EMBED
-
-        message.channel.send(embed);
-    }
-});
-
-
-
-//token
-client.login(config.token);
+module.exports.usuarioRegistrado = usuarioRegistrado;
+module.exports.registrarUsuario = registrarUsuario;
+module.exports.verNivel = verNivel;
+module.exports.consultarXp = consultarXp;
