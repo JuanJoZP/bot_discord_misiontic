@@ -1,5 +1,7 @@
 # bot de discord: MisionTic
 
+## Creado Por: Esteban Navia y Juan José Zuluaga Patiño
+
 Este es un bot de discord para el server de el programa educativo Mision TIC 2022
 puede ser personalizado para usar sus funcionalidades en otros servers (entrar a el codigo y cambiar las variables indicadas allí).
 el bot maneja funcionalidades simples en el server:
