@@ -19,7 +19,6 @@ function registrarUsuario (user) {
             nivel: 1,
             xp: 0,
         }
-
         console.log(`Datos creados para ${user.tag}`);
 
         fs.writeFile("./users_levels.json", JSON.stringify(usuarios), (err) => {
