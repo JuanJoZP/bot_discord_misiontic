@@ -6,23 +6,19 @@ Este es un bot de discord para el server de el programa educativo Mision TIC 202
 puede ser personalizado para usar sus funcionalidades en otros servers (entrar a el codigo y cambiar las variables indicadas allí).
 el bot maneja funcionalidades simples en el server:
 
-* Sistemas de niveles.
-* Sistema de advertencias y baneos.
-* Sistema de informacion
-* Sistema de tickets (desarrollo)
+-   Sistemas de niveles.
+-   Sistema de advertencias y baneos.
+-   Sistema de informacion
+-   Sistema de tickets (desarrollo)
 
 ### Setup de el bot
 
-- crear nuevo bot en la pagina oficial de discord y copiar el token.
-- clonar repositorio
-- en la carpeta base añadir archivo config.json con la siguiente informacion:
-```
-{
-  "prefix":"(aqui va el prefix a utilizar para los comandos del bot)",
-  "token":"(aqui va el token del bot)"
-}
-```
--ejecutar los comando:
+-   crear nuevo bot en la pagina oficial de discord y copiar el token.
+-   clonar repositorio
+-   reemplazar el archivo .env.dist por un archivo .env con la misma informacion, poner el token de el bot en la variable TOKEN y cambiar el prefix en la variable PREFIX
+
+````
+-ejecutar los comandos:
 ```npm i```
 ```npm start```
 
@@ -38,5 +34,5 @@ Si en consola puede ver un mensaje que dice: Sesión iniciada como...  **signifi
 
 ###### Para cualquiera
   * **ayuda** - se muestra informacion de contacto de el programa educativo
-  * **ruta1** - muestra informacion especifica de la ruta 1                                                                                                   
-
+  * **ruta1** - muestra informacion especifica de la ruta 1
+````

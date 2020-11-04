@@ -1,3 +1,4 @@
 users_levels.json
 warns.json
 node_modules
+.env

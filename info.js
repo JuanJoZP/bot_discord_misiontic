@@ -1,7 +1,9 @@
+require('dotenv').config();
+const prefix = process.env['PREFIX'];
+const token = process.env['TOKEN'];
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const config = require('./config.json');
-const prefix = config.prefix;
+
 //Consola
 client.once('ready', () => {
 	console.log('Mensajes Automaticos');
@@ -78,4 +80,4 @@ client.on('message', (msg) => {
 });
 
 //token
-client.login(config.token);
+client.login(token);
