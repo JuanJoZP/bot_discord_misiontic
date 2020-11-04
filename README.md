@@ -8,6 +8,8 @@ el bot maneja funcionalidades simples en el server:
 
 * Sistemas de niveles.
 * Sistema de advertencias y baneos.
+* Sistema de informacion
+* Sistema de tickets (desarrollo)
 
 ### Setup de el bot
 
@@ -20,13 +22,21 @@ el bot maneja funcionalidades simples en el server:
   "token":"(aqui va el token del bot)"
 }
 ```
--ejecutar el archivo bot.js con el comando:
-```node .\bot.js```
+-ejecutar los comando:
+```npm i```
+```npm start```
 
 Si en consola puede ver un mensaje que dice: Sesión iniciada como...  **significa que el bot ya esta listo y funcionando**
 
-### Documentacion para uso:
+### Uso:
+##### (prefix+comando ej. !!nivel)
 
-* !!nivel - en cualquier canal, el bot respondera con un mensaje en el que se muestra el nivel actual del usuario, su xp y la xp para llegar al siguiente nivel.
-* !!warn @usuario razon de warneo - pone advertencia e el usuario mencionado, envia mensaje informando de la advertencia, cuando un usuario llega a las 3 advertencias este es baneado
+###### Solo para admins
+  * **nivel** - se muestra el nivel actual del usuario, su xp y la xp para llegar al siguiente nivel.
+  * **warn @nombre_usuario razon_de_warneo** - advierte a el usuario mencionado, cuando un usuario llega a las 3 advertencias este es baneado
+  * **ruta1**
+
+###### Para cualquiera
+  * **ayuda** - se muestra informacion de contacto de el programa educativo
+  * **ruta1** - muestra informacion especifica de la ruta 1                                                                                                   
 
