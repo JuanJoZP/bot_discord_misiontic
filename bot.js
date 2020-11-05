@@ -6,6 +6,7 @@ const client = new Discord.Client();
 const levels = require('./levels.js');
 const warn = require('./warn.js');
 const info = require('./info.js');
+const ticket = require('./ticket.js');
 const role_id = '750551197328605294'; //ROL ENTUSIASTA
 const admin = '756000768317849692'; //CAMBIAR POR LA ID DE EL ROL DE ADMIN EN CADA SERVIDOR
 const mod = '768270744299503686'; //SEGUNDO ROL DE ADMIN - CAMBIAR POR LA ID DE EL ROL DE ADMIN EN CADA SERVIDOR
