@@ -17,15 +17,9 @@ client.once('ready', () => {
 function abrirTicket(ticket_canal) {
 	const embed = new Discord.MessageEmbed()
 		.setColor('#02FD74')
-		.setTitle('SOPORTE | ELEGIDOS RP')
+		.setTitle('SOPORTE | MisionTic2022')
 		.setDescription('`Reacciona a este mensaje, para abrir un ticket.`')
-		.setThumbnail(
-			'https://cdn.discordapp.com/attachments/763211051793514556/763573080001085450/Discord-present.png'
-		)
-		.setFooter(
-			'©ELEGIDOS RP | 2020',
-			'https://cdn.discordapp.com/attachments/763211051793514556/763573080001085450/Discord-present.png'
-		);
+		.setTimestamp();
 
 	ticket_canal.send(embed).then((msg) => {
 		msg_id = msg.id;
