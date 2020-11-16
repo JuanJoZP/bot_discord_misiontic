@@ -16,8 +16,6 @@ el bot maneja funcionalidades simples en el server:
 -   crear nuevo bot en la pagina oficial de discord y copiar el token.
 -   clonar repositorio
 -   reemplazar el archivo .env.dist por un archivo .env con la misma informacion, poner el token de el bot en la variable TOKEN y cambiar el prefix en la variable PREFIX
-
-````
 -ejecutar los comandos:
 ```npm i```
 ```npm start```
@@ -35,4 +33,4 @@ Si en consola puede ver un mensaje que dice: Sesión iniciada como...  **signifi
 ###### Para cualquiera
   * **ayuda** - se muestra informacion de contacto de el programa educativo
   * **ruta1** - muestra informacion especifica de la ruta 1
-````
+
